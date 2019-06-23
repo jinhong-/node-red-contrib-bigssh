@@ -40,7 +40,7 @@ module.exports = function(RED) {
     function SSH_Node(n) {
 
       RED.nodes.createNode(this, n);
-
+      var node = this;
       this.host = n.host;
       this.port = n.port;
       this.label = '';
@@ -104,7 +104,7 @@ module.exports = function(RED) {
 
         // Here it is, the job is starting now
         var conn = new require('ssh2').Client();
-	this.warn(ssh_config);
+	node.warn(ssh_config);
         // this means "biglib"
         this.working("Connecting to " + ssh_config.host + "...");
 
