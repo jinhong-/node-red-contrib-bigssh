@@ -50,6 +50,7 @@ module.exports = function(RED) {
         host: this.host,
         port: this.port,
         username: this.credentials.username,
+        privateKey: '',
         privateKeyFile: this.credentials.privateKey,
         passphrase: this.credentials.passphrase,
 	password: this.credentials.password
