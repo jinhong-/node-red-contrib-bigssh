@@ -48,7 +48,7 @@ module.exports = function(RED) {
 
       var ssh_config = {
         host: this.host,
-        port: this.port,
+        port: 22,
         username: this.credentials.username,
         privateKey: undefined,
         privateKeyFile: this.credentials.privateKey,
