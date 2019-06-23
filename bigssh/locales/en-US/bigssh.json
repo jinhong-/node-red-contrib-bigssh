@@ -9,6 +9,7 @@
             "port": "Port",
             "user": "Username",
             "privateKey": "Private Key Path",
+            "password": "Password, if any",
             "passphrase": "Pass phrase, if any",
             "algorithms": "Key Exchange Algorithms",
             "commandLine": "Command",
