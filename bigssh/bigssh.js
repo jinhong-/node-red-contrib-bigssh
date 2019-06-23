@@ -104,7 +104,7 @@ module.exports = function(RED) {
 
         // Here it is, the job is starting now
         var conn = new require('ssh2').Client();
-	this.debug(ssh_config);
+	this.warn(ssh_config);
         // this means "biglib"
         this.working("Connecting to " + ssh_config.host + "...");
 
