@@ -52,7 +52,8 @@ module.exports = function(RED) {
         username: this.credentials.username,
         privateKey: undefined,
         privateKeyFile: this.credentials.privateKey,
-        passphrase: this.credentials.passphrase
+        passphrase: this.credentials.passphrase,
+	password: this.credentials.password
       }
       if (this.credentials.algorithms) {
 	ssh_config.algorithms =  {'kex': [this.credentials.algorithms]};
@@ -157,8 +158,8 @@ module.exports = function(RED) {
         username: { type: "text" },
         privateKey: { type: "text" },
         passphrase: { type: "password" },
-        algorithms: { type: "text" }
-
+        algorithms: { type: "text" },
+        password: { type: "password" }
       }
     });      
 
