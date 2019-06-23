@@ -50,7 +50,7 @@ module.exports = function(RED) {
         host: this.host,
         port: this.port,
         username: this.credentials.username,
-        privateKey: '',
+        privateKey: undefined,
         privateKeyFile: this.credentials.privateKey,
         passphrase: this.credentials.passphrase,
 	password: this.credentials.password
@@ -73,7 +73,9 @@ module.exports = function(RED) {
         // Choice was made to read the keyfile at each run in order to make it possible to correct a configuration
         // without restarting
         try {
-          ssh_config.privateKey = require('fs').readFileSync(ssh_config.privateKeyFile);
+	  if(ssh_config.privateKeyFile) {
+            ssh_config.privateKey = require('fs').readFileSync(ssh_config.privateKeyFile);
+	  }
         } catch (err) {
           throw new Error("Private Key: " + err.Message);
         }
